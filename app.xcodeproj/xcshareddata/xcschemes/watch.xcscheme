@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CEE063D4244592A70037D9AA"
-               BuildableName = "watch app.app"
+               BuildableName = "awoca.app"
                BlueprintName = "watch app"
                ReferencedContainer = "container:app.xcodeproj">
             </BuildableReference>
@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CEE063D1244592A70037D9AA"
-               BuildableName = "watch.app"
+               BuildableName = "awoca.app"
                BlueprintName = "watch"
                ReferencedContainer = "container:app.xcodeproj">
             </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CEE063D4244592A70037D9AA"
-            BuildableName = "watch app.app"
+            BuildableName = "awoca.app"
             BlueprintName = "watch app"
             ReferencedContainer = "container:app.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CEE063D4244592A70037D9AA"
-            BuildableName = "watch app.app"
+            BuildableName = "awoca.app"
             BlueprintName = "watch app"
             ReferencedContainer = "container:app.xcodeproj">
          </BuildableReference>
@@ -89,7 +89,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CEE063D4244592A70037D9AA"
-            BuildableName = "watch app.app"
+            BuildableName = "awoca.app"
             BlueprintName = "watch app"
             ReferencedContainer = "container:app.xcodeproj">
          </BuildableReference>

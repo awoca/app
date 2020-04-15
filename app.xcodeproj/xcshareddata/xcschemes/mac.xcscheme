@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CEE063A6244591BA0037D9AA"
-               BuildableName = "mac.app"
+               BuildableName = "awoca.app"
                BlueprintName = "mac"
                ReferencedContainer = "container:app.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CEE063A6244591BA0037D9AA"
-            BuildableName = "mac.app"
+            BuildableName = "awoca.app"
             BlueprintName = "mac"
             ReferencedContainer = "container:app.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CEE063A6244591BA0037D9AA"
-            BuildableName = "mac.app"
+            BuildableName = "awoca.app"
             BlueprintName = "mac"
             ReferencedContainer = "container:app.xcodeproj">
          </BuildableReference>
