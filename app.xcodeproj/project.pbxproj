@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		CE7F509724477B4F0035212B /* Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F509624477B4F0035212B /* Scroll.swift */; };
 		CE7F509924477BA50035212B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7F509824477BA50035212B /* Media.xcassets */; };
 		CE7F509B24477BF00035212B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F509A24477BF00035212B /* Color.swift */; };
+		CEABF6B3244789FF002CF2DC /* Balam in Frameworks */ = {isa = PBXBuildFile; productRef = CEABF6B2244789FF002CF2DC /* Balam */; };
 		CEE063AB244591BA0037D9AA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063AA244591BA0037D9AA /* App.swift */; };
 		CEE063AF244591BB0037D9AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE063AE244591BB0037D9AA /* Assets.xcassets */; };
 		CEE063BF2445927B0037D9AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063BE2445927B0037D9AA /* AppDelegate.swift */; };
@@ -120,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEABF6B3244789FF002CF2DC /* Balam in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +248,9 @@
 			dependencies = (
 			);
 			name = mac;
+			packageProductDependencies = (
+				CEABF6B2244789FF002CF2DC /* Balam */,
+			);
 			productName = mac;
 			productReference = CEE063A7244591BA0037D9AA /* awoca.app */;
 			productType = "com.apple.product-type.application";
@@ -353,6 +358,9 @@
 				Base,
 			);
 			mainGroup = CEE0639C244590C20037D9AA;
+			packageReferences = (
+				CEABF6B1244789FF002CF2DC /* XCRemoteSwiftPackageReference "balam" */,
+			);
 			productRefGroup = CEE063A8244591BA0037D9AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1199,6 +1207,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEABF6B1244789FF002CF2DC /* XCRemoteSwiftPackageReference "balam" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/catverse/balam";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEABF6B2244789FF002CF2DC /* Balam */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEABF6B1244789FF002CF2DC /* XCRemoteSwiftPackageReference "balam" */;
+			productName = Balam;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CEE0639D244590C20037D9AA /* Project object */;
 }
