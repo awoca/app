@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CEE063AB244591BA0037D9AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063AA244591BA0037D9AA /* AppDelegate.swift */; };
+		CEE063AB244591BA0037D9AA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063AA244591BA0037D9AA /* App.swift */; };
 		CEE063AF244591BB0037D9AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE063AE244591BB0037D9AA /* Assets.xcassets */; };
 		CEE063BF2445927B0037D9AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063BE2445927B0037D9AA /* AppDelegate.swift */; };
 		CEE063C12445927B0037D9AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063C02445927B0037D9AA /* SceneDelegate.swift */; };
@@ -21,6 +21,7 @@
 		CEE063EC244592A80037D9AA /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063EB244592A80037D9AA /* HostingController.swift */; };
 		CEE063EE244592A80037D9AA /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063ED244592A80037D9AA /* ExtensionDelegate.swift */; };
 		CEE063F0244592A80037D9AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE063EF244592A80037D9AA /* Assets.xcassets */; };
+		CEFD086F2446DFBA00C691D4 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD086E2446DFBA00C691D4 /* Window.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +68,7 @@
 
 /* Begin PBXFileReference section */
 		CEE063A7244591BA0037D9AA /* awoca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = awoca.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEE063AA244591BA0037D9AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEE063AA244591BA0037D9AA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		CEE063AE244591BB0037D9AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEE063B3244591BB0037D9AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE063B4244591BB0037D9AA /* mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mac.entitlements; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 		CEE06400244598910037D9AA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CEE06401244598910037D9AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEE06402244598910037D9AA /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CEFD086E2446DFBA00C691D4 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +151,8 @@
 			children = (
 				CEE063B4244591BB0037D9AA /* mac.entitlements */,
 				CEE063B3244591BB0037D9AA /* Info.plist */,
-				CEE063AA244591BA0037D9AA /* AppDelegate.swift */,
+				CEE063AA244591BA0037D9AA /* App.swift */,
+				CEFD086E2446DFBA00C691D4 /* Window.swift */,
 				CEE063AE244591BB0037D9AA /* Assets.xcassets */,
 			);
 			path = mac;
@@ -374,7 +377,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEE063AB244591BA0037D9AA /* AppDelegate.swift in Sources */,
+				CEE063AB244591BA0037D9AA /* App.swift in Sources */,
+				CEFD086F2446DFBA00C691D4 /* Window.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
