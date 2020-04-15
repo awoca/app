@@ -13,7 +13,7 @@ import AppKit
     
     func applicationWillFinishLaunching(_: Notification) {
 //        mainMenu = Menu()
-        Window().makeKeyAndOrderFront(nil)
+        Launch().makeKeyAndOrderFront(nil)
     }
     
 //    @objc func preferences() {
