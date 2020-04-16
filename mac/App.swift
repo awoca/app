@@ -1,4 +1,7 @@
+import Balam
 import AppKit
+
+let balam = Balam("awoca")
 
 @NSApplicationMain final class App: NSApplication, NSApplicationDelegate {
     required init?(coder: NSCoder) { nil }

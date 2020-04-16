@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE5A63F524482B240034AEF9 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A63F424482B240034AEF9 /* Bookmark.swift */; };
 		CE7F5087244777EB0035212B /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F5086244777EB0035212B /* Launch.swift */; };
 		CE7F50892447795F0035212B /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F50882447795F0035212B /* Label.swift */; };
 		CE7F508B244779700035212B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F508A244779700035212B /* Button.swift */; };
@@ -78,6 +79,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE5A63F424482B240034AEF9 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		CE7F5086244777EB0035212B /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		CE7F50882447795F0035212B /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		CE7F508A244779700035212B /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				CEE063B4244591BB0037D9AA /* mac.entitlements */,
 				CEE063B3244591BB0037D9AA /* Info.plist */,
 				CEE063AA244591BA0037D9AA /* App.swift */,
+				CE5A63F424482B240034AEF9 /* Bookmark.swift */,
 				CE7F508A244779700035212B /* Button.swift */,
 				CE7F509A24477BF00035212B /* Color.swift */,
 				CE7F509424477ABA0035212B /* Control.swift */,
@@ -426,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7F508E244779A00035212B /* String.swift in Sources */,
+				CE5A63F524482B240034AEF9 /* Bookmark.swift in Sources */,
 				CE7F509524477ABA0035212B /* Control.swift in Sources */,
 				CE7F509724477B4F0035212B /* Scroll.swift in Sources */,
 				CE7F509B24477BF00035212B /* Color.swift in Sources */,

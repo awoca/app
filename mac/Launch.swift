@@ -1,10 +1,9 @@
-//import Balam
+import Balam
 import Combine
 import AppKit
 
 final class Launch: NSWindow {
-//    private var graph: Graph!
-    private var subs = Set<AnyCancellable>()
+    private var sub: AnyCancellable?
     
     init() {
         super.init(contentRect: .init(x: 0, y: 0, width: 600, height: 300), styleMask: [.borderless, .closable, .titled, .unifiedTitleAndToolbar, .fullSizeContentView], backing: .buffered, defer: false)
@@ -60,26 +59,22 @@ final class Launch: NSWindow {
         scroll.widthAnchor.constraint(equalTo: blur.widthAnchor).isActive = true
         scroll.width.constraint(equalTo: blur.widthAnchor).isActive = true
         
-//        Balam.graph("Lab").sink { [weak self] in
-//            guard let self = self else { return }
-//            self.graph = $0
-//            $0.remove(Bookmark.self) { !FileManager.default.fileExists(atPath: $0.id.path) }
-//            $0.nodes(Bookmark.self).receive(on: DispatchQueue.main).sink { [weak self] in
-//                guard let self = self else { return }
-//                button.isHidden = false
-//                var top = scroll.top
-//                $0.sorted { $0.edited < $1.edited }.forEach {
-//                    let item = Item($0, self, #selector(self.click(_:)))
-//                    scroll.add(item)
-//                    
-//                    item.topAnchor.constraint(equalTo: top).isActive = true
-//                    item.leftAnchor.constraint(equalTo: scroll.left).isActive = true
-//                    item.widthAnchor.constraint(equalTo: blur.widthAnchor).isActive = true
-//                    top = item.bottomAnchor
-//                }
-//                scroll.bottom.constraint(greaterThanOrEqualTo: top).isActive = true
-//            }.store(in: &self.subs)
-//        }.store(in: &subs)
+        balam.remove(Bookmark.self) { !FileManager.default.fileExists(atPath: $0.id.path) }
+        sub = balam.nodes(Bookmark.self).sink { [weak self] _ in
+            guard let self = self else { return }
+//            button.isHidden = false
+//            var top = scroll.top
+//            $0.sorted { $0.edited < $1.edited }.forEach {
+//                let item = Item($0, self, #selector(self.click(_:)))
+//                scroll.add(item)
+//
+//                item.topAnchor.constraint(equalTo: top).isActive = true
+//                item.leftAnchor.constraint(equalTo: scroll.left).isActive = true
+//                item.widthAnchor.constraint(equalTo: blur.widthAnchor).isActive = true
+//                top = item.bottomAnchor
+//            }
+//            scroll.bottom.constraint(greaterThanOrEqualTo: top).isActive = true
+        }
     }
     
     override func close() {
