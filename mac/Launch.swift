@@ -53,25 +53,27 @@ final class Launch: NSWindow {
         blur.rightAnchor.constraint(equalTo: contentView!.rightAnchor).isActive = true
         blur.widthAnchor.constraint(equalToConstant: 300).isActive = true
         
-        scroll.topAnchor.constraint(equalTo: blur.topAnchor).isActive = true
-        scroll.bottomAnchor.constraint(equalTo: blur.bottomAnchor).isActive = true
+        scroll.topAnchor.constraint(equalTo: blur.topAnchor, constant: 1).isActive = true
+        scroll.bottomAnchor.constraint(equalTo: blur.bottomAnchor, constant: -1).isActive = true
         scroll.rightAnchor.constraint(equalTo: blur.rightAnchor).isActive = true
         scroll.widthAnchor.constraint(equalTo: blur.widthAnchor).isActive = true
         scroll.width.constraint(equalTo: blur.widthAnchor).isActive = true
+        
+        let home = getpwuid(getuid()).pointee.pw_dir.map { FileManager.default.string(withFileSystemRepresentation: $0, length: .init(strlen($0))) } ?? ""
         
         balam.remove(Bookmark.self) { !FileManager.default.fileExists(atPath: $0.id.path) }
         sub = balam.nodes(Bookmark.self).sink { [weak self] in
             guard let self = self else { return }
             var top = scroll.top
             $0.sorted { $0.edited > $1.edited }.forEach {
-                let item = Item($0)
+                let item = Item($0, home: home)
                 item.target = self
                 item.action = #selector(self.click)
                 scroll.add(item)
 
                 item.topAnchor.constraint(equalTo: top).isActive = true
                 item.leftAnchor.constraint(equalTo: scroll.left).isActive = true
-                item.widthAnchor.constraint(equalTo: blur.widthAnchor).isActive = true
+                item.rightAnchor.constraint(equalTo: scroll.right, constant: -1).isActive = true
                 top = item.bottomAnchor
             }
             scroll.bottom.constraint(greaterThanOrEqualTo: top).isActive = true
@@ -116,27 +118,32 @@ private final class Item: Control {
     fileprivate let bookmark: Bookmark
     
     required init?(coder: NSCoder) { nil }
-    init(_ bookmark: Bookmark) {
+    init(_ bookmark: Bookmark, home: String) {
         self.bookmark = bookmark
         super.init()
         wantsLayer = true
         
         let name = Label(bookmark.id.deletingPathExtension().lastPathComponent, .medium(15))
+        name.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        name.maximumNumberOfLines = 1
+        name.lineBreakMode = .byTruncatingTail
         addSubview(name)
         
-        let url = Label(bookmark.id.deletingLastPathComponent().path, .light(11))
+        let url = Label(NSString(string: bookmark.id.deletingLastPathComponent().path.replacingOccurrences(of: home, with: "~")).abbreviatingWithTildeInPath, .lightMono(11))
         url.lineBreakMode = .byTruncatingMiddle
+        url.maximumNumberOfLines = 1
         url.textColor = .secondaryLabelColor
         addSubview(url)
         
-        heightAnchor.constraint(equalToConstant: 80).isActive = true
+        bottomAnchor.constraint(equalTo: url.bottomAnchor, constant: 12).isActive = true
         
-        name.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
-        name.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
+        name.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
+        name.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
+        name.rightAnchor.constraint(lessThanOrEqualTo: rightAnchor, constant: -15).isActive = true
         
-        url.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 5).isActive = true
+        url.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 2).isActive = true
         url.leftAnchor.constraint(equalTo: name.leftAnchor).isActive = true
-        url.rightAnchor.constraint(lessThanOrEqualTo: rightAnchor, constant: -20).isActive = true
+        url.rightAnchor.constraint(lessThanOrEqualTo: rightAnchor, constant: -15).isActive = true
     }
     
     override func updateLayer() {
