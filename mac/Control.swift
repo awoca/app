@@ -19,11 +19,11 @@ class Control: NSView {
     }
     
     override func mouseDown(with: NSEvent) {
-        alphaValue = 0.3
+        hoverOn()
     }
     
     override func mouseExited(with: NSEvent) {
-        alphaValue = 1
+        hoverOff()
     }
     
     override func mouseUp(with: NSEvent) {
@@ -33,6 +33,14 @@ class Control: NSView {
         } else {
             super.mouseUp(with: with)
         }
+        hoverOff()
+    }
+    
+    func hoverOn() {
+        alphaValue = 0.3
+    }
+    
+    func hoverOff() {
         alphaValue = 1
     }
 }

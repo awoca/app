@@ -60,20 +60,21 @@ final class Launch: NSWindow {
         scroll.width.constraint(equalTo: blur.widthAnchor).isActive = true
         
         balam.remove(Bookmark.self) { !FileManager.default.fileExists(atPath: $0.id.path) }
-        sub = balam.nodes(Bookmark.self).sink { [weak self] _ in
+        sub = balam.nodes(Bookmark.self).sink { [weak self] in
             guard let self = self else { return }
-//            button.isHidden = false
-//            var top = scroll.top
-//            $0.sorted { $0.edited < $1.edited }.forEach {
-//                let item = Item($0, self, #selector(self.click(_:)))
-//                scroll.add(item)
-//
-//                item.topAnchor.constraint(equalTo: top).isActive = true
-//                item.leftAnchor.constraint(equalTo: scroll.left).isActive = true
-//                item.widthAnchor.constraint(equalTo: blur.widthAnchor).isActive = true
-//                top = item.bottomAnchor
-//            }
-//            scroll.bottom.constraint(greaterThanOrEqualTo: top).isActive = true
+            var top = scroll.top
+            $0.sorted { $0.edited > $1.edited }.forEach {
+                let item = Item($0)
+                item.target = self
+                item.action = #selector(self.click)
+                scroll.add(item)
+
+                item.topAnchor.constraint(equalTo: top).isActive = true
+                item.leftAnchor.constraint(equalTo: scroll.left).isActive = true
+                item.widthAnchor.constraint(equalTo: blur.widthAnchor).isActive = true
+                top = item.bottomAnchor
+            }
+            scroll.bottom.constraint(greaterThanOrEqualTo: top).isActive = true
         }
     }
     
@@ -84,39 +85,40 @@ final class Launch: NSWindow {
             super.close()
         }
     }
-//
-//    private func select(_ bookmark: Bookmark) {
-//        Window(bookmark).makeKeyAndOrderFront(nil)
-//        close()
-//    }
-//
+
+    private func select(_ bookmark: Bookmark) {
+        Window(bookmark).makeKeyAndOrderFront(nil)
+        close()
+    }
+
     @objc private func open() {
         let browse = NSOpenPanel()
-        browse.allowedFileTypes = ["balam"]
+        browse.canChooseFiles = false
+        browse.canChooseDirectories = true
         browse.begin { [weak self] in
             guard $0 == .OK, let url = browse.url else { return }
-//            let bookmark = Bookmark(url)
-//            self?.graph.add(bookmark)
-//            self?.select(bookmark)
+            let bookmark = Bookmark(url)
+            balam.add(bookmark)
+            self?.select(bookmark)
         }
     }
-//
-//    @objc private func click(_ item: Item) {
-//        var bookmark = item.bookmark
-//        bookmark.edited = .init()
-//        graph.update(bookmark)
-//        select(item.bookmark)
-//    }
+
+    @objc private func click(_ item: Item) {
+        var bookmark = item.bookmark
+        bookmark.edited = .init()
+        balam.update(bookmark)
+        select(item.bookmark)
+    }
 }
-/*
+
 private final class Item: Control {
     private var opacity = CGFloat(0)
     fileprivate let bookmark: Bookmark
     
     required init?(coder: NSCoder) { nil }
-    init(_ bookmark: Bookmark, _ target: AnyObject, _ action: Selector) {
+    init(_ bookmark: Bookmark) {
         self.bookmark = bookmark
-        super.init(target, action)
+        super.init()
         wantsLayer = true
         
         let name = Label(bookmark.id.deletingPathExtension().lastPathComponent, .medium(15))
@@ -138,7 +140,7 @@ private final class Item: Control {
     }
     
     override func updateLayer() {
-        layer!.backgroundColor = NSColor.controlAccentColor.withAlphaComponent(opacity).cgColor
+        layer!.backgroundColor = NSColor.indigo.withAlphaComponent(opacity).cgColor
     }
     
     override func hoverOn() {
@@ -151,4 +153,3 @@ private final class Item: Control {
         updateLayer()
     }
 }
-*/

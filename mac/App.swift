@@ -10,6 +10,10 @@ let balam = Balam("awoca")
         delegate = self
     }
     
+    func applicationShouldTerminateAfterLastWindowClosed(_: NSApplication) -> Bool {
+        true
+    }
+    
     func applicationDidBecomeActive(_: Notification) {
 //        news.refresh()
     }
