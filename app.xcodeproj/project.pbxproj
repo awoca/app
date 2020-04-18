@@ -34,6 +34,7 @@
 		CEE063EC244592A80037D9AA /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063EB244592A80037D9AA /* HostingController.swift */; };
 		CEE063EE244592A80037D9AA /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063ED244592A80037D9AA /* ExtensionDelegate.swift */; };
 		CEE063F0244592A80037D9AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE063EF244592A80037D9AA /* Assets.xcassets */; };
+		CEFBD3DD244B2E7D004ADE16 /* Git in Frameworks */ = {isa = PBXBuildFile; productRef = CEFBD3DC244B2E7D004ADE16 /* Git */; };
 		CEFD086F2446DFBA00C691D4 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD086E2446DFBA00C691D4 /* Window.swift */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEABF6B3244789FF002CF2DC /* Balam in Frameworks */,
+				CEFBD3DD244B2E7D004ADE16 /* Git in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +258,7 @@
 			name = mac;
 			packageProductDependencies = (
 				CEABF6B2244789FF002CF2DC /* Balam */,
+				CEFBD3DC244B2E7D004ADE16 /* Git */,
 			);
 			productName = mac;
 			productReference = CEE063A7244591BA0037D9AA /* awoca.app */;
@@ -366,6 +369,7 @@
 			mainGroup = CEE0639C244590C20037D9AA;
 			packageReferences = (
 				CEABF6B1244789FF002CF2DC /* XCRemoteSwiftPackageReference "balam" */,
+				CEFBD3DB244B2E7D004ADE16 /* XCRemoteSwiftPackageReference "git" */,
 			);
 			productRefGroup = CEE063A8244591BA0037D9AA /* Products */;
 			projectDirPath = "";
@@ -1225,6 +1229,14 @@
 				kind = branch;
 			};
 		};
+		CEFBD3DB244B2E7D004ADE16 /* XCRemoteSwiftPackageReference "git" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/awoca/git.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1232,6 +1244,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CEABF6B1244789FF002CF2DC /* XCRemoteSwiftPackageReference "balam" */;
 			productName = Balam;
+		};
+		CEFBD3DC244B2E7D004ADE16 /* Git */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEFBD3DB244B2E7D004ADE16 /* XCRemoteSwiftPackageReference "git" */;
+			productName = Git;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

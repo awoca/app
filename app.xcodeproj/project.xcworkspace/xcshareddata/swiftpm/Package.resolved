@@ -9,6 +9,15 @@
           "revision": "2d889305b9befc049a120d80148dff688b80a2bd",
           "version": null
         }
+      },
+      {
+        "package": "Git",
+        "repositoryURL": "https://github.com/awoca/git.git",
+        "state": {
+          "branch": "master",
+          "revision": "9afb2547571c172c2e73f5b5ba07f38cc2fe251a",
+          "version": null
+        }
       }
     ]
   },
