@@ -1,2 +1,4 @@
-Launch.title="Awoca";
-Launch.button="Open Repository";
+Awoca = "Awoca";
+Button.open = "Open Repository";
+Error.noAccess.title = "Can't access URL";
+Error.noAccess.subtitle = "Try opening this repository again from the launch screen";

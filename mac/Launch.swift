@@ -20,11 +20,11 @@ final class Launch: NSWindow {
         image.imageScaling = .scaleNone
         contentView!.addSubview(image)
         
-        let title = Label(.key("Launch.title"), .light(25))
+        let title = Label(.key("Awoca"), .light(25))
         title.textColor = .headerTextColor
         contentView!.addSubview(title)
         
-        let button = Button(.key("Launch.button"))
+        let button = Button(.key("Button.open"))
         button.target = self
         button.action = #selector(open)
         contentView!.addSubview(button)
