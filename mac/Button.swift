@@ -6,7 +6,7 @@ final class Button: Control {
         super.init()
         wantsLayer = true
         layer!.cornerRadius = 6
-        layer!.backgroundColor = .indigo
+        layer!.backgroundColor = .indigoLight
         
         let label = Label(title, .medium(12))
         label.textColor = .black

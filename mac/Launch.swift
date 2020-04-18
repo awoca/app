@@ -30,7 +30,7 @@ final class Launch: NSWindow {
         contentView!.addSubview(button)
         
         let blur = NSVisualEffectView()
-        blur.material = .sidebar
+        blur.material = .underWindowBackground
         blur.translatesAutoresizingMaskIntoConstraints = false
         contentView!.addSubview(blur)
         
@@ -53,7 +53,7 @@ final class Launch: NSWindow {
         blur.rightAnchor.constraint(equalTo: contentView!.rightAnchor).isActive = true
         blur.widthAnchor.constraint(equalToConstant: 300).isActive = true
         
-        scroll.topAnchor.constraint(equalTo: blur.topAnchor, constant: 1).isActive = true
+        scroll.topAnchor.constraint(equalTo: blur.topAnchor, constant: 30).isActive = true
         scroll.bottomAnchor.constraint(equalTo: blur.bottomAnchor, constant: -1).isActive = true
         scroll.rightAnchor.constraint(equalTo: blur.rightAnchor).isActive = true
         scroll.widthAnchor.constraint(equalTo: blur.widthAnchor).isActive = true
@@ -129,7 +129,7 @@ private final class Item: Control {
         name.lineBreakMode = .byTruncatingTail
         addSubview(name)
         
-        let url = Label(NSString(string: bookmark.id.deletingLastPathComponent().path.replacingOccurrences(of: home, with: "~")).abbreviatingWithTildeInPath, .lightMono(11))
+        let url = Label(NSString(string: bookmark.id.deletingLastPathComponent().path.replacingOccurrences(of: home, with: "~")).abbreviatingWithTildeInPath, .regularMono(10))
         url.lineBreakMode = .byTruncatingMiddle
         url.maximumNumberOfLines = 1
         url.textColor = .secondaryLabelColor
@@ -147,7 +147,7 @@ private final class Item: Control {
     }
     
     override func updateLayer() {
-        layer!.backgroundColor = NSColor.indigo.withAlphaComponent(opacity).cgColor
+        layer!.backgroundColor = NSColor.indigoDark.withAlphaComponent(opacity).cgColor
     }
     
     override func hoverOn() {

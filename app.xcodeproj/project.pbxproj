@@ -19,6 +19,7 @@
 		CE7F509924477BA50035212B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7F509824477BA50035212B /* Media.xcassets */; };
 		CE7F509B24477BF00035212B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F509A24477BF00035212B /* Color.swift */; };
 		CEABF6B3244789FF002CF2DC /* Balam in Frameworks */ = {isa = PBXBuildFile; productRef = CEABF6B2244789FF002CF2DC /* Balam */; };
+		CED1AC81244B000000D2D46A /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1AC80244B000000D2D46A /* Bar.swift */; };
 		CEE063AB244591BA0037D9AA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063AA244591BA0037D9AA /* App.swift */; };
 		CEE063AF244591BB0037D9AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE063AE244591BB0037D9AA /* Assets.xcassets */; };
 		CEE063BF2445927B0037D9AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063BE2445927B0037D9AA /* AppDelegate.swift */; };
@@ -90,6 +91,7 @@
 		CE7F509624477B4F0035212B /* Scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scroll.swift; sourceTree = "<group>"; };
 		CE7F509824477BA50035212B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		CE7F509A24477BF00035212B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CED1AC80244B000000D2D46A /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		CEE063A7244591BA0037D9AA /* awoca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = awoca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE063AA244591BA0037D9AA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		CEE063AE244591BB0037D9AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				CEE063B4244591BB0037D9AA /* mac.entitlements */,
 				CEE063B3244591BB0037D9AA /* Info.plist */,
 				CEE063AA244591BA0037D9AA /* App.swift */,
+				CED1AC80244B000000D2D46A /* Bar.swift */,
 				CE5A63F424482B240034AEF9 /* Bookmark.swift */,
 				CE7F508A244779700035212B /* Button.swift */,
 				CE7F509A24477BF00035212B /* Color.swift */,
@@ -429,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7F508E244779A00035212B /* String.swift in Sources */,
+				CED1AC81244B000000D2D46A /* Bar.swift in Sources */,
 				CE5A63F524482B240034AEF9 /* Bookmark.swift in Sources */,
 				CE7F509524477ABA0035212B /* Control.swift in Sources */,
 				CE7F509724477B4F0035212B /* Scroll.swift in Sources */,

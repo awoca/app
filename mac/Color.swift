@@ -1,9 +1,11 @@
 import AppKit
 
 extension NSColor {
-    static let indigo = NSColor(named: "indigo")!
+    static let indigoLight = NSColor(named: "indigoLight")!
+    static let indigoDark = NSColor(named: "indigoDark")!
 }
 
 extension CGColor {
-    static let indigo = NSColor.indigo.cgColor
+    static let indigoLight = NSColor.indigoLight.cgColor
+    static let indigoDark = NSColor.indigoDark.cgColor
 }
