@@ -39,10 +39,10 @@ final class Launch: NSWindow {
         
         image.topAnchor.constraint(equalTo: contentView!.topAnchor, constant: 40).isActive = true
         image.centerXAnchor.constraint(equalTo: contentView!.leftAnchor, constant: 150).isActive = true
-        image.widthAnchor.constraint(equalToConstant: 74).isActive = true
-        image.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        image.widthAnchor.constraint(equalToConstant: 96).isActive = true
+        image.heightAnchor.constraint(equalToConstant: 110).isActive = true
         
-        title.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 20).isActive = true
+        title.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 10).isActive = true
         title.centerXAnchor.constraint(equalTo: contentView!.leftAnchor, constant: 150).isActive = true
         
         button.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 30).isActive = true
