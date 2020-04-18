@@ -1,4 +1,6 @@
 Awoca = "Awoca";
 Button.open = "Open Repository";
-Error.noAccess.title = "Can't access URL";
-Error.noAccess.subtitle = "Try opening this repository again from the launch screen";
+Error.no.access.title = "Can't access URL";
+Error.no.access.subtitle = "Try opening this Repository again from the Launch Screen";
+Error.no.repository.title = "This is not a Repository";
+Error.no.repository.subtitle = "For the moment Awoca only supports already existing Repositories, soon you will be able to create new ones";

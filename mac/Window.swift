@@ -1,9 +1,13 @@
+import Git
 import AppKit
+import Combine
 
 final class Window: NSWindow {
     private weak var bar: Bar!
     private weak var content: Scroll!
     private var url: URL?
+    private var repository: Repository!
+    private var subs = Set<AnyCancellable>()
     
     init(_ bookmark: Bookmark) {
         super.init(contentRect: .init(x: 0, y: 0, width: 800, height: 600), styleMask: [.borderless, .miniaturizable, .resizable, .closable, .titled, .unifiedTitleAndToolbar, .fullSizeContentView], backing: .buffered, defer: false)
@@ -39,7 +43,15 @@ final class Window: NSWindow {
             error(.key("Error.noAccess.title"), subtitle: .key("Error.noAccess.subtitle"))
             return
         }
-
+        
+        git.open(url).sink { [weak self] in
+            guard let repository = $0 else {
+                self?.error(.key("Error.no.repository.title"), subtitle: .key("Error.no.repository.subtitle"))
+                return
+            }
+            self?.repository = repository
+        }.store(in: &subs)
+        
         self.url = url
     }
     

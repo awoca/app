@@ -13,7 +13,7 @@ final class Bar: NSView {
         blur.translatesAutoresizingMaskIntoConstraints = false
         addSubview(blur)
         
-        let icon = NSImageView()
+        let icon = NSImageView(image: NSImage(named: "ok")!)
         icon.translatesAutoresizingMaskIntoConstraints = false
         icon.imageScaling = .scaleNone
         addSubview(icon)

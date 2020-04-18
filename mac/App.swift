@@ -1,7 +1,9 @@
+import Git
 import Balam
 import AppKit
 
 let balam = Balam("awoca")
+let git = Git()
 
 @NSApplicationMain final class App: NSApplication, NSApplicationDelegate {
     required init?(coder: NSCoder) { nil }
