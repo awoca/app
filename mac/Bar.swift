@@ -72,19 +72,25 @@ final class Bar: NSView {
         separator.heightAnchor.constraint(equalToConstant: 1).isActive = true
         separator.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 10).isActive = true
         separator.leftAnchor.constraint(equalTo: label.leftAnchor).isActive = true
-        separator.rightAnchor.constraint(equalTo: rightAnchor, constant: -1).isActive = true
+        separator.rightAnchor.constraint(equalTo: rightAnchor, constant: -3).isActive = true
         
         return label
     }
     
     private func item(_ name: String, image: String) -> Item {
         let item = Item(name, image: image)
+        item.target = self
+        item.action = #selector(show)
         addSubview(item)
         
         item.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         item.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         
         return item
+    }
+    
+    @objc private func show(_ item: Item) {
+        subviews.compactMap { $0 as? Item }.forEach { $0.selected = $0 == item }
     }
 }
 
@@ -93,11 +99,13 @@ private final class Item: Control {
         didSet {
             title.textColor = selected ? .indigoLight : .labelColor
             icon.contentTintColor = selected ? .indigoLight : .labelColor
+            indicator.layer!.backgroundColor = selected ? .indigoLight : .clear
         }
     }
     
     private weak var title: Label!
     private weak var icon: NSImageView!
+    private weak var indicator: NSView!
     
     required init?(coder: NSCoder) { nil }
     init(_ name: String, image: String) {
@@ -109,9 +117,16 @@ private final class Item: Control {
         addSubview(icon)
         self.icon = icon
         
-        let title = Label(name, .medium(12))
+        let title = Label(name, .bold(12))
         addSubview(title)
         self.title = title
+        
+        let indicator = NSView()
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.wantsLayer = true
+        indicator.layer!.cornerRadius = 1
+        addSubview(indicator)
+        self.indicator = indicator
         
         heightAnchor.constraint(equalToConstant: 40).isActive = true
         
@@ -122,5 +137,22 @@ private final class Item: Control {
         
         title.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         title.leftAnchor.constraint(equalTo: icon.rightAnchor, constant: 20).isActive = true
+        
+        indicator.rightAnchor.constraint(equalTo: rightAnchor, constant: -4).isActive = true
+        indicator.widthAnchor.constraint(equalToConstant: 2).isActive = true
+        indicator.heightAnchor.constraint(equalToConstant: 16).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+    }
+    
+    override func mouseDown(with: NSEvent) {
+        if !selected {
+            super.mouseDown(with: with)
+        }
+    }
+    
+    override func mouseUp(with: NSEvent) {
+        if !selected {
+            super.mouseUp(with: with)
+        }
     }
 }

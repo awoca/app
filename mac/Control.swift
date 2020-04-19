@@ -22,10 +22,6 @@ class Control: NSView {
         hoverOn()
     }
     
-    override func mouseExited(with: NSEvent) {
-        hoverOff()
-    }
-    
     override func mouseUp(with: NSEvent) {
         window!.makeFirstResponder(self)
         if bounds.contains(convert(with.locationInWindow, from: nil)) {
