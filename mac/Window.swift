@@ -3,6 +3,7 @@ import AppKit
 import Combine
 
 final class Window: NSWindow {
+    let bookmark: Bookmark
     private weak var bar: Bar!
     private weak var content: Scroll!
     private var url: URL?
@@ -10,6 +11,7 @@ final class Window: NSWindow {
     private var subs = Set<AnyCancellable>()
     
     init(_ bookmark: Bookmark) {
+        self.bookmark = bookmark
         super.init(contentRect: .init(x: 0, y: 0, width: 800, height: 600), styleMask: [.borderless, .miniaturizable, .resizable, .closable, .titled, .unifiedTitleAndToolbar, .fullSizeContentView], backing: .buffered, defer: false)
         minSize = .init(width: 300, height: 200)
         center()
@@ -20,7 +22,7 @@ final class Window: NSWindow {
         collectionBehavior = .fullScreenNone
         isReleasedWhenClosed = false
         
-        let bar = Bar(bookmark)
+        let bar = Bar(self)
         contentView!.addSubview(bar)
         self.bar = bar
         
@@ -50,6 +52,7 @@ final class Window: NSWindow {
                 return
             }
             self?.repository = repository
+            bar.showItems()
         }.store(in: &subs)
         
         self.url = url

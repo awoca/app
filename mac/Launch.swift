@@ -114,7 +114,7 @@ final class Launch: NSWindow {
 }
 
 private final class Item: Control {
-    private var opacity = CGFloat(0)
+    private var opacity = CGFloat()
     fileprivate let bookmark: Bookmark
     
     required init?(coder: NSCoder) { nil }

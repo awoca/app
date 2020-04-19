@@ -36,6 +36,7 @@
 		CEE063F0244592A80037D9AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE063EF244592A80037D9AA /* Assets.xcassets */; };
 		CEFBD3DD244B2E7D004ADE16 /* Git in Frameworks */ = {isa = PBXBuildFile; productRef = CEFBD3DC244B2E7D004ADE16 /* Git */; };
 		CEFD086F2446DFBA00C691D4 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD086E2446DFBA00C691D4 /* Window.swift */; };
+		CEFD9058244C747C003DCD9C /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD9057244C747C003DCD9C /* Separator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		CEE06401244598910037D9AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEE06402244598910037D9AA /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CEFD086E2446DFBA00C691D4 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		CEFD9057244C747C003DCD9C /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				CE7F50882447795F0035212B /* Label.swift */,
 				CE7F5086244777EB0035212B /* Launch.swift */,
 				CE7F509624477B4F0035212B /* Scroll.swift */,
+				CEFD9057244C747C003DCD9C /* Separator.swift */,
 				CEFD086E2446DFBA00C691D4 /* Window.swift */,
 				CEE063AE244591BB0037D9AA /* Assets.xcassets */,
 			);
@@ -444,6 +447,7 @@
 				CE7F508B244779700035212B /* Button.swift in Sources */,
 				CE7F509324477A200035212B /* Font.swift in Sources */,
 				CEE063AB244591BA0037D9AA /* App.swift in Sources */,
+				CEFD9058244C747C003DCD9C /* Separator.swift in Sources */,
 				CE7F5087244777EB0035212B /* Launch.swift in Sources */,
 				CE7F50892447795F0035212B /* Label.swift in Sources */,
 				CEFD086F2446DFBA00C691D4 /* Window.swift in Sources */,
