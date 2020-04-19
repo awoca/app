@@ -9,6 +9,6 @@ final class Separator: NSView {
     }
     
     override func updateLayer() {
-        layer!.backgroundColor = NSColor.tertiaryLabelColor.cgColor
+        layer!.backgroundColor = NSColor.separatorColor.cgColor
     }
 }

@@ -5,3 +5,4 @@ Error.no.access.subtitle = "Try opening this Repository again from the Launch Sc
 Error.no.repository.title = "This is not a Repository";
 Error.no.repository.subtitle = "For the moment awoca only supports already existing Repositories, soon you will be able to create new ones";
 Commits.title = "Commits";
+Commits.calendar = "Calendar";

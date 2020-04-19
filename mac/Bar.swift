@@ -49,7 +49,7 @@ final class Bar: NSView {
     
     func showItems() {
         let commits = header(.key("Commits.title"))
-        let calendar = item(.key("Commits.calendar"), image: "")
+        let calendar = item(.key("Commits.calendar"), image: "calendar")
         
         commits.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 50).isActive = true
         calendar.topAnchor.constraint(equalTo: commits.bottomAnchor, constant: 20).isActive = true
@@ -70,9 +70,9 @@ final class Bar: NSView {
         label.leftAnchor.constraint(equalTo: leftAnchor, constant: 30).isActive = true
         
         separator.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        separator.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 5).isActive = true
+        separator.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 10).isActive = true
         separator.leftAnchor.constraint(equalTo: label.leftAnchor).isActive = true
-        separator.rightAnchor.constraint(equalTo: rightAnchor, constant: -30).isActive = true
+        separator.rightAnchor.constraint(equalTo: rightAnchor, constant: -1).isActive = true
         
         return label
     }
@@ -81,24 +81,46 @@ final class Bar: NSView {
         let item = Item(name, image: image)
         addSubview(item)
         
-        item.leftAnchor.constraint(equalTo: leftAnchor, constant: 30).isActive = true
-        item.rightAnchor.constraint(equalTo: leftAnchor, constant: 30).isActive = true
+        item.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        item.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         
         return item
     }
 }
 
 private final class Item: Control {
-    private var opacity = CGFloat()
+    var selected = false {
+        didSet {
+            title.textColor = selected ? .indigoLight : .labelColor
+            icon.contentTintColor = selected ? .indigoLight : .labelColor
+        }
+    }
+    
+    private weak var title: Label!
+    private weak var icon: NSImageView!
     
     required init?(coder: NSCoder) { nil }
     init(_ name: String, image: String) {
         super.init()
+        let icon = NSImageView(image: NSImage(named: image)!)
+        icon.translatesAutoresizingMaskIntoConstraints = false
+        icon.imageScaling = .scaleNone
+        icon.contentTintColor = .labelColor
+        addSubview(icon)
+        self.icon = icon
+        
         let title = Label(name, .medium(12))
         addSubview(title)
+        self.title = title
         
         heightAnchor.constraint(equalToConstant: 40).isActive = true
         
+        icon.leftAnchor.constraint(equalTo: leftAnchor, constant: 32).isActive = true
+        icon.widthAnchor.constraint(equalToConstant: 14).isActive = true
+        icon.heightAnchor.constraint(equalTo: icon.widthAnchor).isActive = true
+        icon.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
         title.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        title.leftAnchor.constraint(equalTo: icon.rightAnchor, constant: 20).isActive = true
     }
 }
