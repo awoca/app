@@ -60,8 +60,8 @@ final class Bar: NSView {
     }
     
     private func header(_ title: String) -> Label {
-        let label = Label(title, .regular(12))
-        label.textColor = .secondaryLabelColor
+        let label = Label(title, .light(12))
+        label.textColor = .labelColor
         addSubview(label)
         
         let separator = Separator()
